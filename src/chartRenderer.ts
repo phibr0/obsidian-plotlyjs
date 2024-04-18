@@ -101,6 +101,7 @@ export default class Renderer {
                             max: yaml.rMax,
                             min: yaml.rMin,
                             ticks: {
+                                display: yaml.rTickDisplay,
                                 backdropColor: gridColor
                             }
                         },
