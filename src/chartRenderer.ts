@@ -1,5 +1,6 @@
 import { Chart, ChartConfiguration, SankeyControllerDatasetOptions, registerables } from 'chart.js';
 import { SankeyController, Flow } from 'chartjs-chart-sankey';
+import { MatrixController, MatrixElement } from 'chartjs-chart-matrix';
 import './date-adapter/chartjs-adapter-moment.esm.js';
 import { MarkdownPostProcessorContext, MarkdownRenderChild, parseYaml, TFile } from 'obsidian';
 import { generateInnerColors, renderError } from 'src/util';
@@ -8,7 +9,7 @@ import type ChartPlugin from 'src/main';
 import { generateTableData } from 'src/chartFromTable';
 import annotationPlugin from 'chartjs-plugin-annotation'
 
-Chart.register(...registerables, annotationPlugin, SankeyController, Flow);
+Chart.register(...registerables, annotationPlugin, SankeyController, Flow, MatrixController, MatrixElement);
 
 // I need to refactor this
 // Or just rewrite it completely
@@ -186,7 +187,31 @@ export default class Renderer {
                     },
                 }
             }
-        }else {
+        } else if (yaml.type == 'matrix') {
+			(chartOptions as ChartConfiguration<'matrix'>) = {
+				type: yaml.type,
+				data: {
+                    labels,
+                    datasets
+                },
+				options: {
+					scales: {
+						x: {
+							display: yaml.xDisplay,
+							min: yaml.xMin,
+							max: yaml.xMax,
+							offset: yaml.xOffset
+						},
+						y: {
+							display: yaml.xDisplay,
+							min: yaml.xMin,
+							max: yaml.xMax,
+							offset: yaml.xOffset
+						}
+					}
+				}
+			}
+		} else {
             (chartOptions as ChartConfiguration<"pie" | "doughnut" | "bubble" | "scatter">) = {
                 type: yaml.type,
                 data: {
