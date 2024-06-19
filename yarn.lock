@@ -172,10 +172,15 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chart.js@^3.9.1, chart.js@>=3.3.0, chart.js@>=3.7.0:
+chart.js@^3.9.1, chart.js@>=3.0.0, chart.js@>=3.3.0, chart.js@>=3.7.0:
   version "3.9.1"
   resolved "https://registry.npmjs.org/chart.js/-/chart.js-3.9.1.tgz"
   integrity sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==
+
+chartjs-chart-matrix@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/chartjs-chart-matrix/-/chartjs-chart-matrix-2.0.1.tgz"
+  integrity sha512-BGfeY+/PHnITyDlc7WfnKJ1RyOfgOzIqWp/gxzzl7pUjyoGzHDcw51qd2xJF9gdT9Def7ZwOnOMm8GJUXDxI0w==
 
 chartjs-chart-sankey@^0.12.0:
   version "0.12.0"
@@ -282,11 +287,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"
