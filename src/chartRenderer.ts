@@ -7,8 +7,10 @@ import type { ImageOptions } from './constants/settingsConstants';
 import type ChartPlugin from 'src/main';
 import { generateTableData } from 'src/chartFromTable';
 import annotationPlugin from 'chartjs-plugin-annotation'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import {TreemapController, TreemapElement} from 'chartjs-chart-treemap';
 
-Chart.register(...registerables, annotationPlugin, SankeyController, Flow);
+Chart.register(...registerables, annotationPlugin, ChartDataLabels, TreemapController, TreemapElement, SankeyController, Flow);
 
 // I need to refactor this
 // Or just rewrite it completely
