@@ -19,10 +19,14 @@ import { CreationHelperModal } from './ui/creationHelperModal';
 import { addIcons } from 'src/ui/icons';
 import { chartFromTable } from 'src/chartFromTable';
 import { renderError, saveImageToVaultAndPaste } from 'src/util';
+import {color} from 'chart.js/helpers'
+import Highcharts from 'highcharts/highstock';
+
 
 export default class ChartPlugin extends Plugin {
   settings: ChartPluginSettings;
   renderer: Renderer;
+  color: any;
 
   postprocessor = async (
     content: string,
@@ -102,9 +106,12 @@ export default class ChartPlugin extends Plugin {
     addIcons();
 
     this.renderer = new Renderer(this);
+    this.color = color;
 
     //@ts-ignore
     window.renderChart = this.renderer.renderRaw;
+    //@ts-ignore
+    window.Highcharts = Highcharts;
 
     this.addSettingTab(new ChartSettingTab(this.app, this));
 
